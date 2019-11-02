@@ -8,5 +8,5 @@ package com.buseduc.javacourse.topic_02.task_98_ivanivanov;
  */
 
 public class TestTaskAgain {
-    
+
 }
