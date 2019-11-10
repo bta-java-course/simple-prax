@@ -1,6 +1,5 @@
 package com.buseduc.javacourse.topic_01.task_01_3_mah0neh0ne;
 
-
 /**
  * @author mah0neh0ne
  * Тема 1. Основы ООП
