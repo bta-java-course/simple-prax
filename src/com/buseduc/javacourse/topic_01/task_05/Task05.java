@@ -1,4 +1,4 @@
-package com.buseduc.javacourse.topic_01.task_09_be78ar;
+package com.buseduc.javacourse.topic_01.task_05_MariiaZakharova21;
 
 /**
  * @author MariiaZakharova21
