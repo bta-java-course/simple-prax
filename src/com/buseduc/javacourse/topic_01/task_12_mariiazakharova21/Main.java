@@ -24,7 +24,6 @@ public class Main {
             int num3 = ((num % 1000) / 10) % 10;
             int num4 = num / 1000;
             if (num4 == 0 && num1 != num2 && num2 != num3 && num1 != num3) {
-
                 System.out.println(num);
             }
         }
