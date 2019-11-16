@@ -15,5 +15,18 @@ public class Main {
     public static void main(String[] args) {
         List<Integer> numbers = InputUtils.getNumbersFromInput();
         System.out.println(numbers.get(0));
+
+        for (int num :
+                numbers) {
+
+            int num1 = (num % 1000) % 10;
+            int num2 = (num % 1000) / 100;
+            int num3 = ((num % 1000) / 10) % 10;
+            int num4 = num / 1000;
+            if (num4 == 0 && num1 != num2 && num2 != num3 && num1 != num3) {
+
+                System.out.println(num);
+            }
+        }
     }
 }
