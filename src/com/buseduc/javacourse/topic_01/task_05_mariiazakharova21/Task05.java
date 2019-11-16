@@ -1,4 +1,4 @@
-package com.buseduc.javacourse.topic_01.task_05;
+package com.buseduc.javacourse.topic_01.task_05_mariiazakharova21;
 
 import com.buseduc.javacourse.utils.InputUtils;
 
