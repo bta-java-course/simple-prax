@@ -14,7 +14,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Integer> numbers = InputUtils.getNumbersFromInput();
-        System.out.println(numbers.get(0));
 
         for (int num :
                 numbers) {
