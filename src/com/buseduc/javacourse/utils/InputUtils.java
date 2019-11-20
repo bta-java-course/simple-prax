@@ -24,4 +24,13 @@ public class InputUtils {
         scanner.close();
         return nums;
     }
+    public static String getTextFromInput() {
+        Scanner scanner = new Scanner(System.in);
+        String hint = "Введите текст: ";
+        System.out.println(hint);
+        String input = scanner.nextLine();
+        scanner.close();
+        return input;
+    }
+
 }
