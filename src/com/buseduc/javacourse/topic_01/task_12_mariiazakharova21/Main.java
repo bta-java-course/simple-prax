@@ -17,12 +17,13 @@ public class Main {
 
         for (int num :
                 numbers) {
-
-            int num1 = (num % 1000) % 10;
-            int num2 = (num % 1000) / 100;
-            int num3 = ((num % 1000) / 10) % 10;
-            int num4 = num / 1000;
-            if (num4 == 0 && num1 != num2 && num2 != num3 && num1 != num3) {
+            int numOnes = (num % 1000) % 10;
+            int numHundreds = (num % 1000) / 100;
+            int numDozens = ((num % 1000) / 10) % 10;
+            int numThousands = num / 1000;
+            if (numThousands == 0 && numHundreds != 0 &&
+                    numOnes != numDozens && numDozens != numHundreds &&
+                    numOnes != numHundreds) {
                 System.out.println(num);
             }
         }
