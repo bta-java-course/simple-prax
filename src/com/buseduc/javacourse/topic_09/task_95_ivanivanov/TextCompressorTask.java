@@ -5,29 +5,37 @@ import com.buseduc.javacourse.utils.InputUtils;
 import java.util.*;
 
 public class TextCompressorTask {
-    static Map<String, Integer> textMapping = new HashMap<>();
-    static Map<Integer, String> invertedMapping = new HashMap<>();
-    static List<Integer> encodedText = new ArrayList<>();
     public static void main(String[] args) {
+        List<Integer> dictionaryList = new ArrayList<>();
+        Map<String, Integer> dictionaryMap = new HashMap<>();
+        List<String> dictionary = new ArrayList<>();
         String text = InputUtils.getTextFromInput();
         String[] words = text.split(" ");
+        final Integer[] index = new Integer[]{0};
         Arrays.stream(words).forEach(w -> {
-            int value = 1;
-            if(textMapping.get(w) == null) {
-                textMapping.put(w, value);
+            int newIndex = -1;
+            if (dictionaryMap.containsKey(w)) {
+                newIndex = dictionaryMap.get(w);
             } else {
-                value = textMapping.get(w);
-                textMapping.put(w, ++value);
+                dictionaryMap.put(w, index[0]);
+                dictionary.add(index[0], w);
             }
-            invertedMapping.put(value, w);
+            if (newIndex < 0) {
+                dictionaryList.add(index[0]);
+                index[0] ++;
+            } else {
+                dictionaryList.add(newIndex);
+            }
         });
-        Arrays.stream(words).forEach(w -> {
-            int value = 0;
-            value = textMapping.get(w);
-            encodedText.add(value);
-        });
+        System.out.println(dictionaryList);
+        System.out.println(dictionary);
 
-        System.out.println(encodedText);
+        System.out.println("DECODING: ");
+        String decoded = "";
+        for (Integer ix : dictionaryList) {
+            decoded += dictionary.get(ix) + " ";
+        }
+        System.out.println(decoded);
     }
 
 }
