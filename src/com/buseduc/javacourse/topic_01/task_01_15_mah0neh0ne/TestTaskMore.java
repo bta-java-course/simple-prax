@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * @author mah0neh0ne
  * Тема 1. Основы ООП
- * Задание 1_15. Из n целых чисел вывести простые числа.
+ * Задание 1_15. Из n целых чисел вывести простые числа..
  */
 
 public class TestTaskMore {
