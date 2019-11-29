@@ -26,6 +26,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         List<Integer> numbers = getIntegerListFromFile("data.txt");
+
+        int[][] nums2 = new int[2][3];
     }
 
     public static List<Integer> getIntegerListFromFile(String fileName) throws IOException, URISyntaxException {
