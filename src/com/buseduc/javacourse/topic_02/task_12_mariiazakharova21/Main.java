@@ -27,8 +27,17 @@ public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException {
         List<Integer> numbers = getIntegerListFromFile("data.txt");
 
-        int[][] nums2 = new int[2][3];
+        int[][] nums2 = new int[4][4];
+        int k = 0;
+        for (int i = 0; i < nums2.length; i++) {
+            for (int j = 0; j < nums2[i].length; j++) {
+                nums2[i][j] = k < numbers.size() ? numbers.get(k) : 0;
+                k++;
+            }
+        }
+
     }
+
 
     public static List<Integer> getIntegerListFromFile(String fileName) throws IOException, URISyntaxException {
         String path = Main.class.getResource("data.txt").getPath();
