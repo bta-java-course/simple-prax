@@ -12,24 +12,19 @@ import java.util.Scanner;
 public class TestTask {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите число:");
-        sc.nextInt();
-        int a = 0; // Начальное значение диапазона - "от"
-        int b = 10; // Конечное значение диапазона - "до"
-        int random_number1 = a + (int) (Math.random() * b); // Генерация 1-го числа
-        System.out.println("1-ое случайное число: " + random_number1);
-
-        int random_number2 = a + (int) (Math.random() * b); // Генерация 2-го числа
-        System.out.println("2-ое случайное число: " + random_number2);
-
-        int random_number3 = a + (int) (Math.random() * b); // Генерация 3-го числа
-        System.out.println("3-е случайное число: " + random_number3);
-
-
-
+        Scanner a = new Scanner(System.in);
+        int result = 0;
+        int y = a.nextInt();
+        int c = a.nextInt();
+        int diff = c - y + 1;
+        Random r = new Random();
+        System.out.println("Запрашиваемое количество");
+        for (int x = 0; x < 20; x++) {
+            result = r.nextInt(diff) + y;
+            System.out.println(result);
+        }
     }
-    }
+}
 
 
 
