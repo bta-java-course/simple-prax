@@ -13,23 +13,24 @@ import java.util.Scanner;
 public class TestTaskMore {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Для прекращения ввода введите нечисленное значение или число между -45 и 45");
+            System.out.println("INFO. Для прекращения ввода введите нечисленное значение или число между -35 и 35");
             String hint = "Введите целое число: ";
             System.out.println(hint);
             List<Long> nums = new ArrayList<>();
             while (scanner.hasNextLong()) {  //program will work, while input is integer or long integer
                 long i = scanner.nextLong();
-                if (i >-45 && i < 45) {
-                    System.out.println("Эмм... этот диапазон чисел ТОЧНО не делится и на 3 и на 9. Забыл таблицу умножения?");
+                if (i >-35 && i < 35) {
+                    System.out.println("Эмм... этот диапазон чисел ТОЧНО не делится и на 5 и на 7. Забыл таблицу умножения?");
                     System.out.println("Task over");
                     break;
-                } else if (i % 45 == 0)
+                } else if (i % 35 == 0)  //Least common multiple for simple numbers is numbers multiplying each other
+
                     nums.add(i);
             }
-            System.out.println("числа делящиеся на 3 и 9 : " + nums);
+            System.out.println("числа делящиеся на 5 и 7 : " + nums);
             System.out.println("Task over");
         }
-    }
+}
 
 
 
