@@ -20,14 +20,14 @@ public class TestTaskMore {
             while (scanner.hasNextLong()) {  //program will work, while input is integer or long integer
                 long i = scanner.nextLong();
                 if (i >-35 && i < 35) {
-                    System.out.println("Эмм... этот диапазон чисел ТОЧНО не делится и на 5 и на 7. Забыл таблицу умножения?");
+                    System.out.println("Эмм... этот диапазон чисел ТОЧНО не делится и на 3 и на 9. Забыл таблицу умножения?");
                     System.out.println("Task over");
                     break;
                 } else if (i % 35 == 0)  //Least common multiple for simple numbers is numbers multiplying each other
 
                     nums.add(i);
             }
-            System.out.println("числа делящиеся на 5 и 7 : " + nums);
+            System.out.println("числа делящиеся на 3 и 9 : " + nums);
             System.out.println("Task over");
         }
 }
