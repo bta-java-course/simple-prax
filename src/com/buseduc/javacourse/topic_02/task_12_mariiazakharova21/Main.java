@@ -1,5 +1,7 @@
 package com.buseduc.javacourse.topic_02.task_12_mariiazakharova21;
 
+import java.util.Scanner;
+
 import com.buseduc.javacourse.utils.InputUtils;
 
 import java.io.BufferedReader;
@@ -25,16 +27,18 @@ import static java.lang.Integer.parseInt;
 public class Main {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
-        List<Integer> numbers = getIntegerListFromFile("data.txt");
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int count = in.nextInt();
         List<Integer[][]> arrays = new ArrayList<>();
 
-        int k = 0;
-        while (k < numbers.size()) {
+        int k = 1;
+        while (k <= count) {
             Integer[][] nums2 = new Integer[4][4];
 
             for (int i = 0; i < nums2.length; i++) {
                 for (int j = 0; j < nums2[i].length; j++) {
-                    nums2[i][j] = k < numbers.size() ? numbers.get(k) : 0;
+                    nums2[i][j] = k <= count ? k : 0;
                     k++;
                 }
             }
