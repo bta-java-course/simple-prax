@@ -1,4 +1,4 @@
-package com.buseduc.javacourse.topic_03_18_mah0neh0ne;
+package com.buseduc.javacourse.topic_03.topic_03_18_mah0neh0ne;
 
 import java.util.Arrays;
 import java.util.Random;

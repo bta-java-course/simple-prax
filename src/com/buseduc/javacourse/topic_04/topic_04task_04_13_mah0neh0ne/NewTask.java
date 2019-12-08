@@ -1,4 +1,4 @@
-package com.buseduc.javacourse.topic_04task_04_13_mah0neh0ne;
+package com.buseduc.javacourse.topic_04.topic_04task_04_13_mah0neh0ne;
 
 /**
  * @author mah0neh0ne
