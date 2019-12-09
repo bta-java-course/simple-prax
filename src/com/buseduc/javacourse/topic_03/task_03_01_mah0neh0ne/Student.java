@@ -6,7 +6,8 @@ import java.util.Date;
 /**
  * @author mah0neh0ne
  * Тема 3. Классы и объекты
- * Задание 3_01. Student: id, Фамилия, Имя, Отчество, Дата рождения, Адрес, Телефон, Факультет, Курс, Группа. Создать массив объектов. Вывести:
+ * Задание 3_01. Student: id, Фамилия, Имя, Отчество, Дата рождения, Адрес, Телефон, Факультет, Курс, Группа. Создать массив объектов.
+ * Вывести:
  * a) список студентов заданного факультета;
  * b) списки студентов для каждого факультета и курса;
  * c) список студентов, родившихся после заданного года;
@@ -14,86 +15,116 @@ import java.util.Date;
  */
 
 public class Student {
-    int id = 0;             //0 id
-    String name = "Jon";      //1 Имя
-    String surname = "Dou";    //2 Фамилия
-    String pat = "Ryu";         //3 Отчество
-    Date age= new Date(0,0,0);    //4 Дата  рождения
-    String adres;               //5 Адрес
-    int telnum;              //6 Телефон
-    String fakultet;            //7 Факультет
-    int numkurs;             //8 Курс
-    int group;               //9 Группа
+    private int id;
+    private static int nextId=0;
+    private String name;
+    private String middleName;
+    private String dateOfBirth;
+    private String surname;
+    private String phoneNumber;
+    private String faculty;
+    private String course;
+    private String group;
+    public Student( String name, String middleName, String surname,String dateOfBirth,  String phoneNumber, String faculty, String course, String group) {
 
-    public void setStudentAllValue(int id, String name, String surname, String pat, Date age, String adres,
-                                   int telnum, String fakultet, int numkurs, int group) {
-        this.id = id;
+        this.name=name;
+        this.middleName=middleName;
+        this.surname=surname;
+        this.dateOfBirth=dateOfBirth;
+        this.phoneNumber=phoneNumber;
+        this.faculty=faculty;
+        this.course=course;
+        this.group=group;
+        id=nextId++;
+        setName(name);
+        setMiddleName(middleName);
+        setSurname(surname);
+        setDateOfBirth(dateOfBirth);
+        setPhoneNumber(phoneNumber);
+        setFaculty(faculty);
+        setCourse(course);
+        setGroup(group);}
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public String getMiddleName() {
+        return name;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
         this.surname = surname;
-        this.pat = pat;
-        this.age = age;
-        this.adres = adres;
-        this.telnum = telnum;
-        this.fakultet = fakultet;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
         this.group = group;
     }
 
-    public static void printLnStudentAllValue(Student Man) {
-        System.out.print(Man.id + "  " + Man.name + " " + Man.surname + " " + Man.pat + " " + Man.age + " ");
-        System.out.print(Man.adres + " " + Man.telnum + " ");
-        System.out.println(Man.fakultet + " " + Man.numkurs + " " + Man.group);
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public static void printMyFakultet(String fakultet1, Student Man) {
-        if (fakultet1.equals(Man.fakultet)) {
-            printLnStudentAllValue(Man);
-        }
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public static void printMyFakultetKurs(String fakultet1, String numkurs1, Student Man) {
-        if ((fakultet1.equals(Man.fakultet))
-                && (numkurs1.equals(Man.numkurs))) {
-            printLnStudentAllValue(Man);
-        }
-    }
 
-    public static void printMyGroup(String group1, Student Man) {
-        if (group1.equals(Man.group)) {
-            printLnStudentAllValue(Man);
-        }
-    }
 
-    public static void printBirthdayAfte(Date sameDate, Student Man) {
-        Date k = Man.age;
-        if (sameDate.getTime() < k.getTime()) {
-            printLnStudentAllValue(Man);
-        }
-    }
 
-    public static void main(String[] args) {
-        ArrayList<Student> list = new ArrayList<>();
-        Student Ivan0 = new Student();
-        Ivan0.setStudentAllValue(388092708,"Mihail","Sokolov","Dmotrievich",new Date(21,05,19),"Moskva",56267781,"Faculty of Business Management",2,1);
-        list.add(Ivan0);
-        Student Ivan1 = new Student();
-        Ivan1.setStudentAllValue(299328932, "Kostja", "Mihulin", "Ivanovich", new Date(20, 11, 27), "Sankt-Peterburg", 445116, "Faculty of Design", 1, 2);
-        list.add(Ivan1);
-        Student Ivan2 = new Student();
-        Ivan2.setStudentAllValue(388009900, "Sanek", "Kot", "Dmitrievich", new Date(22, 9, 28), "Ivanovo", 5672344, "Faculty of Environmental Protection", 3, 1);
-        list.add(Ivan2);
-        Student Ivan3 = new Student();
-        Ivan3.setStudentAllValue(388900923, "Pasha", "Kokorin", "Vladimirovich", new Date(24, 05, 10), "Krasnodar", 56879924, "Faculty of International Relations", 3, 3);
-        list.add(Ivan3);
-        Student Ivan4 = new Student();
-        Ivan4.setStudentAllValue(211873822, "Tanja", "Tarasova", "Nikolaevna", new Date(23, 9, 19), "Novgorod", 56321141, "Faculty of Translation", 2, 1);
-        list.add(Ivan4);
-        for (Student elem : list) {
-            printMyFakultet("Faculty of Business Management", elem);
-            printMyFakultet("Faculty of Design", elem);
-            printMyFakultet("Faculty of Environmental Protection", elem);
-            printMyFakultet("Faculty of International Relations", elem);
-            printMyFakultet("Faculty of Translation", elem);
-        }
+    public String toString() {
+        return "Student{"+" id " +id+
+                ", name='" + name + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", surname='" + surname + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", faculty='" + faculty + '\'' +
+                ", course='" + course + '\'' +
+                ", group='" + group + '\'' +
+                '}';
+    }
+    public String fullName(){
+        return surname+" "+middleName+" "+name;
     }
 }
+
+
+
 
