@@ -9,9 +9,9 @@ package com.buseduc.javacourse.topic_04.topic_04task_04_13_mah0neh0ne;
 
 
 
-public class NewTask {
+public class Word {
     public static void main(String[] args) {
-        String input = "Очень интересное здание";
+        String input = "\n" +"Очень интересное задание";
         String[] words = input.split(" ");
         boolean isContain;
         System.out.print("Встречающиеся во всех словах буквы: ");
@@ -24,3 +24,5 @@ public class NewTask {
         }
     }
 }
+
+
