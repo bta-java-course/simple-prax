@@ -1,7 +1,5 @@
 package com.buseduc.javacourse.topic_03.task_5_mariiazakharova21;
 
-import com.sun.org.apache.xpath.internal.operations.String;
-
 import java.util.List;
 
 /**
@@ -23,26 +21,24 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Book[] books = new Book[]{
-                new Book("Game Of Thrones", "BCL", 1996, new java.lang.String[]{"George Martin"}),
-                new Book("Eat, Pray, Love", "BCL", 2006, new java.lang.String[]{"Elizabeth Gilbert"}),
-                new Book("It Ends With Us", "BCL", 2016, new java.lang.String[]{"Colleen Hoover"}),
-                new Book("Das Lavendelzimmer", "BCL", 2015, new java.lang.String[]{"Nina George"}),
-                new Book("A Clash of Kings", "BCL", 1998, new java.lang.String[]{"George Martin"}),
-                new Book("Harry Potter and the Philosopher's (Sorcerer's) Stone", "BCL", 1997, new java.lang.String[]{"J.K.Rowling"}),
-                new Book("Harry Potter and the Chamber of Secrets", "BCL", 1998, new java.lang.String[]{"J.K.Rowling"}),
-                new Book("Harry Potter and the Prisoner of Azkaban", "BCL", 1999, new java.lang.String[]{"J.K.Rowling"}),
-
-
+                new Book("Game Of Thrones", "BCL", 1996, new String[]{"George Martin"}),
+                new Book("Eat, Pray, Love", "BCL", 2006, new String[]{"Elizabeth Gilbert"}),
+                new Book("It Ends With Us", "BCL", 2016, new String[]{"Colleen Hoover"}),
+                new Book("Das Lavendelzimmer", "BCL", 2015, new String[]{"Nina George"}),
+                new Book("A Clash of Kings", "BCL", 1998, new String[]{"George Martin"}),
+                new Book("Harry Potter and the Philosopher's (Sorcerer's) Stone", "BCL", 1997, new String[]{"J.K.Rowling"}),
+                new Book("Harry Potter and the Chamber of Secrets", "BCL", 1998, new String[]{"J.K.Rowling"}),
+                new Book("Harry Potter and the Prisoner of Azkaban", "BCL", 1999, new String[]{"J.K.Rowling"}),
         };
 
         Library library = new Library(books);
 
-        System.out.println(1);
+        System.out.println("Книги автора: ");
         printBooks(library.listBookOfAuthor("George Martin"));
-        System.out.println(2);
+        System.out.println("Книги издательства: ");
         printBooks(library.listBookOfPublisher("BCL"));
-        System.out.println(3);
-        printBooks(library.listBooksAfterYear(1990));
+        System.out.println("Книги выпущенные после: ");
+        printBooks(library.listBooksAfterYear(1998));
     }
 
     public static void printBooks(List<Book> books) {
