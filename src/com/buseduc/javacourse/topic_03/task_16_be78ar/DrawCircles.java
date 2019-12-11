@@ -26,7 +26,6 @@ public class DrawCircles {
         String hint = "Введите длину радиуса круга: ";
         System.out.println(hint);
         while (scanner.hasNext()) {
-            System.out.println(hint);
             String nextInput = scanner.next();
             try {
                 double r = Double.parseDouble(nextInput);
@@ -39,21 +38,22 @@ public class DrawCircles {
                 break;
             }
             double radius = Double.parseDouble(nextInput);
-
             Circle circle = new Circle(radius, "circle ");
             double sq = circle.CircleSquare(); // calculate circle square
             double l = circle.CircleLength();  // calculate circle length
             circle.setName("circle " + i);
             System.out.println("У нас новый круг :" + circle.getName() + ", его площадь = " + sq +
                         ", длина окружности = " + l);
+            System.out.println("Давайте сделаем ещё один");
             i++;
             circles.add(circle);
         }
 
         scanner.close();
-        Circle last = circles.get(circles.size()-1);
         circles.sort(Comparator.comparingDouble(Circle::getRadius));
-        System.out.println("Наименьший круг из получившихся :" + circles.get(0).getName() + ", наибольший круг " +
+        Circle first = circles.get(0);
+        Circle last = circles.get(circles.size()-1);
+        System.out.println("Наименьший круг из получившихся :" + first.getName() + ", наибольший круг " +
                 last.getName());
     }
 

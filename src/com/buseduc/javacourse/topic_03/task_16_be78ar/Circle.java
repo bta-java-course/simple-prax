@@ -4,12 +4,12 @@ public class Circle {
     private double radius;
     String name;
 
-    public Circle(double radius, String name) {
+    Circle(double radius, String name) {
         this.radius = radius;
         this.name = name;
     }
 
-    public double getRadius() {
+    double getRadius() {
         return radius;
     }
 
@@ -24,12 +24,12 @@ public class Circle {
     double CircleSquare (){
         return Math.PI * Math.pow(radius, 2.0);
     }
-    public String setName(String name) {
+    String setName(String name) {
         this.name = name;
         return name;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 }
