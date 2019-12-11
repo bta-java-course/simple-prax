@@ -26,11 +26,12 @@ public class Book {
                 };
     }
 
-    public Book(String title, int numberOfPages, double price, String[] authors) {
+    public Book(String title, String publishingHouse, int yearOfPublishing, String[] authors) {
+        this.id = title.toLowerCase() + publishingHouse + yearOfPublishing;
         this.title = title;
-        this.numberOfPages = numberOfPages;
-        this.price = price;
+        this.yearOfPublishing = yearOfPublishing;
         this.authors = authors;
+        this.publishingHouse = publishingHouse;
     }
 
     public void setId(String id) {
@@ -38,43 +39,42 @@ public class Book {
     }
 
     public String getId() {
-        System.out.println("Id книги: " + this.id);
         return id;
     }
 
     public void setTitle(String title) {
+
         this.title = title;
     }
 
     public String getTitle() {
-        System.out.println("Название книги: " + this.title);
         return title;
     }
 
     public void setPublishingHouse(String publishingHouse) {
+
         this.publishingHouse = publishingHouse;
     }
 
     public String getPublishingHouse() {
-        System.out.println("Издательство: " + this.publishingHouse);
         return publishingHouse;
     }
 
     public void setYearOfPublishing(int yearOfPublishing) {
+
         this.yearOfPublishing = yearOfPublishing;
     }
 
     public int getYearOfPublishing() {
-        System.out.println("Год издательства: " + this.yearOfPublishing);
         return yearOfPublishing;
     }
 
     public void setNumberOfPages(int numberOfPages) {
+
         this.numberOfPages = numberOfPages;
     }
 
     public int getNumberOfPages() {
-        System.out.println("Колисество страниц: " + this.numberOfPages);
         return numberOfPages;
     }
 
@@ -83,16 +83,15 @@ public class Book {
     }
 
     public double getPrice() {
-        System.out.println("Цена: " + this.price);
         return this.price;
     }
 
     public void setTypeOfBinding(TypeOfBinding typeOfBinding) {
+
         this.typeOfBinding = typeOfBinding;
     }
 
     public TypeOfBinding getTypeOfBinding() {
-        System.out.println(" " + this.typeOfBinding);
         return this.typeOfBinding;
     }
 
@@ -101,13 +100,12 @@ public class Book {
     }
 
     public String[] getAuthors() {
-        System.out.println("Автор: " + this.authors);
         return this.authors;
     }
 
     @Override
     public String toString() {
-        return String.format("{ id:%s, title:%s, publishingHouse:%s, year:%d, pages:%d, price:%d, type:%s, authors:%s }",
+        return String.format("{ id:%s, title:%s, publishingHouse:%s, year:%s, pages:%o, price:%f, type:%s, authors:%s }",
                 this.id,
                 this.title,
                 this.publishingHouse,
